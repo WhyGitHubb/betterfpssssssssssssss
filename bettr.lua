@@ -76,10 +76,6 @@ do -- Locals
 			workspace,
 			Enum.PhysicsSteppingMethod.Default
 		},
-		SignalBehavior = {
-			workspace,
-			Enum.SignalBehavior.Deferred
-		},
 		MeshPartHeadsAndAccessories = {
 			workspace,
 			Enum.MeshPartHeadsAndAccessories.Enabled
@@ -123,7 +119,7 @@ do -- Source
 		for v_string_propName, v_table_propData in next, Properties do
 			local v_Instance_propHolder = v_table_propData[1]
 			local v_any_propValue = v_table_propData[2]
-			--_sethiddenproperty(v_Instance_propHolder, v_string_propName, v_any_propValue)
+			_sethiddenproperty(v_Instance_propHolder, v_string_propName, v_any_propValue)
 		end
 	end
 	do -- MeshParts with their DoubleSided property

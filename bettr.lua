@@ -60,10 +60,6 @@ do -- Locals
 			UserGameSettings,
 			Enum.SavedQualitySetting.QualityLevel1
 		},
-		Technology = {
-			Lighting,
-			Enum.Technology.Legacy
-		},
 		EnvironmentDiffuseScale = {
 			Lighting,
 			0
@@ -71,14 +67,6 @@ do -- Locals
 		EnvironmentSpecularScale = {
 			Lighting,
 			0
-		},
-		PhysicsSteppingMethod = {
-			workspace,
-			Enum.PhysicsSteppingMethod.Default
-		},
-		MeshPartHeadsAndAccessories = {
-			workspace,
-			Enum.MeshPartHeadsAndAccessories.Enabled
 		},
 		ClientAnimatorThrottling = {
 			workspace,
@@ -92,10 +80,6 @@ do -- Locals
 			Lighting,
 			false
 		}, -- Shadows on
-		Decoration = {
-			workspace.Terrain,
-			false
-		}, -- Grass on
 		WaterTransparency = {
 			workspace.Terrain,
 			0

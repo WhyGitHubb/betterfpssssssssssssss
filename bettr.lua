@@ -1,4 +1,4 @@
-setscriptable(game:GetService("Workspace"), "SignalBehavior", true)
+setscriptable(game:GetService("Workspace"), "SignalBehavior", true) --cause sethiddenprop is shit and errors for some reason
 setscriptable(game:GetService("Workspace"), "InterpolationThrottling", true)
 setscriptable(game:GetService("Workspace"), "ClientAnimatorThrottling", true)
 setscriptable(game:GetService("Workspace"), "MeshPartHeadsAndAccessories", true)
@@ -159,7 +159,7 @@ do -- Locals
         }, -- lagn't
         HasEverUsedVR = {
             UserGameSettings,
-            true
+            false
         } -- funni
     }
 end
@@ -211,3 +211,26 @@ do -- Source
         end
     end
 end
+local Zero = NumberRange.new(0)
+local function BoostFPS(x)
+				for _, v in ipairs(x:GetDescendants()) do
+					if v:IsA("BasePart") then
+						v.Reflectance, v.CastShadow = 0, false
+					end
+					if v:IsA("Humanoid") then
+						v.CastShadow = false
+					end
+					if v:IsA("PostEffect") then
+						v.Enabled = false
+					end
+					if v:IsA("ParticleEmitter") or v:IsA("Trail") then
+						v.LightTime = Zero
+					end
+					if v:IsA("Explosion") then
+						v.BlastPressure, v.BlastRadius = 1, 1
+					end
+				end
+			end
+
+BoostFPS(workspace)
+BoostFPS(game:GetService("Lighting"))
